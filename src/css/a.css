@@ -1,0 +1,15 @@
+html,
+body {
+    background: pink;
+}
+
+.test {
+    background: rebeccapurple;
+}
+
+#box1 {
+    width: 100px;
+    height: 100px;
+    background-image: url('../img/web.png');
+    background-size: contain;
+}
