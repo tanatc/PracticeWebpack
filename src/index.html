@@ -1,24 +1,32 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>webpack</title>
-</head>
+<head></head>
 
 <body>
-    <!-- fjdkaslf -->
-    <div id="test">进行压缩、更快</div>
-    <div>兼容性更强</div>
-    <div>开发环境会拖累构建环境的速度，不利于开发</div>
-    <div id="box1"></div>
-    <img src="./img/Web.png" alt="" height="300px" width="300px">
-    <span class="iconfont iconrenminbi"></span>
-    <span class="iconfont iconwxh"></span>
-    <span class="iconfont iconfengkong"></span>
-
+    <div id='resetTime'>
+        <div>
 </body>
 
 </html>
+<script>
+    function getRestTime() {
+        let current = new Date();
+        let curYear = current.getFullYear();
+        let nextMS = new Date(Date.UTC(curYear + 1, 0));
+        let curMS = current.valueOf();
+        let restMs = nextMS - curMS;
+        let restDays = Math.floor(restMs / (1000 * 60 * 60 * 24));
+        let restHours = Math.floor(restMs / (1000 * 60 * 60)) - restDays * 24;
+        let restMinutes = Math.floor(restMs / (1000 * 60)) - restDays * 24 * 60;
+        let restSeconds = Math.floor(restMs / 1000) - restDays * 24 * 60 * 60;
+
+        return `${curYear}年还剩${restDays}天${restHours}时${restMinutes}分${restSeconds}秒`;
+    }
+    let timeDom = document.getElementById('resetTime')
+    setInterval(function() {
+        let text = getRestTime()
+            // timeDom.innerHTML(text)
+        timeDom.innerText = text
+    }, 1000)
+</script>

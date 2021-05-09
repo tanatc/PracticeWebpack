@@ -89,3 +89,8 @@ let arr = Array.from(map)
 arr.sort((a, b) => Number(a[0]) - Number(b[0]))
 arr = arr.map(item => item[1])
 console.log(arr)
+let map1 = new Map()
+map1.set(1, 1)
+map1.set(1, 2)
+
+console.log(map1)
