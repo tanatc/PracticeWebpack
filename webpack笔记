@@ -62,3 +62,8 @@ contenthash：根据文件内容生成的hash值，不同文件hash值一定不�
 6代码分割 code-split
 多入口entry：{main:'', test:''} 
 
+问题：
+针对热更新无法监测html文件更新问题解决方案两个：
+1在入口文件中将html文件引入
+2在entry中添加html文件
+
